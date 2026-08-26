@@ -21,6 +21,17 @@ def Recurivo(n):
     elif n == 0:
         return arr
 
+def Iterativo(n):
+
+    arr = [10, 5, 2, 1], [0, 0, 0, 0]
+    for i in range(len(arr[0])):
+
+        while n >= arr[0][i]:
+            n = n - arr[0][i]
+            arr[1][i] += 1
+
+    return arr
+
 def main():
 
     # Modo recursivo -w-
@@ -29,6 +40,19 @@ def main():
     dinero = int(dinero_txt)
 
     cambio = Recurivo(dinero) 
+
+    print("\nSu cambio es:")
+
+    for i in range(len(cambio[0])):
+        if cambio[1][i] > 0:
+            print(f"  ${cambio[0][i]} x {cambio[1][i]}")
+
+    # Modo iterativo o.o
+
+    dinero_txt = input("Dinero que se recibe: ")
+    dinero = int(dinero_txt)
+
+    cambio = Iterativo(dinero) 
 
     print("\nSu cambio es:")
 
