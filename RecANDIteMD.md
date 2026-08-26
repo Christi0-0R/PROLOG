@@ -37,7 +37,7 @@ Por ejemplo:
 
 ## Método recursivo
 
-La función `Recurivo(n)` recibe como parámetro la cantidad de dinero que se quiere convertir en cambio.
+La función `Recursivo(n)` recibe como parámetro la cantidad de dinero que se quiere convertir en cambio.
 
 Primero comprueba si puede utilizar una moneda de $10. Si es posible, resta 10 a la cantidad y aumenta en uno el contador de monedas de $10. Después vuelve a llamar a la misma función con la cantidad restante. El mismo proceso se realiza con las denominaciones de $5, $2 y finalmente $1.
 
@@ -58,7 +58,7 @@ $10 x 3
 $2 x 2
 ```
 
-El `return Recurivo(n)` permite que la función continúe llamándose a sí misma hasta que la cantidad llegue a cero.
+El `return Recursivo(n)` permite que la función continúe llamándose a sí misma hasta que la cantidad llegue a cero.
 
 ## Método iterativo
 

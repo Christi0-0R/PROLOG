@@ -2,19 +2,19 @@
 
 arr = [10, 5, 2, 1], [0, 0, 0, 0]
 
-def Recurivo(n):
+def Recursivo(n):
     if n >= 10:
         n = n - 10
         arr[1][0] += 1
-        return Recurivo(n)
+        return Recursivo(n)
     elif n < 10 and n >= 5:
         n = n - 5
         arr[1][1] += 1
-        return Recurivo(n)
+        return Recursivo(n)
     elif n < 5 and n >= 2:
         n = n - 2
         arr[1][2] += 1
-        return Recurivo(n)
+        return Recursivo(n)
     elif n == 1:
         arr[1][3] += 1
         return arr
@@ -39,7 +39,7 @@ def main():
     dinero_txt = input("Dinero que se recibe: ")
     dinero = int(dinero_txt)
 
-    cambio = Recurivo(dinero) 
+    cambio = Recursivo(dinero) 
 
     print("\nSu cambio es:")
 
