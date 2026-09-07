@@ -36,6 +36,8 @@ def cabe(x, y, tesela): # funcion para saber si la tesela cabe dentro de la matr
         if nx >= 8 or ny >= 8 or matriz[nx][ny] != 0:
             return False
 
+    return True
+
 
 def pintar_tesela(x, y, tesela, valor): # pintar toda la matriz con teselas menos un cuadrito
 
@@ -53,9 +55,8 @@ def siguiente(x, y):
 
     return x, y + 1
 
-
-def pintar(x, y):
-    # debe ser recursivo ¯\_(ツ)_/¯
+# debe ser recursivo ¯\_(ツ)_/¯
+def pintar(x, y):    
     
     if x == 8: # Matriz recorrida 100%
 
@@ -81,60 +82,6 @@ def pintar(x, y):
             pintar_tesela(x, y, tesela, 0)
 
     return False
-
-
-
-'''        for i in range(8):
-            for j in range(8):
-                
-                if matriz[i][j] == 0:
-                    cantidad_ceros += 1
-
-        if cantidad_ceros == 1:
-            return True
-        else:
-            return False
-                
-
-    if matriz[x][y] != 0: # Buscar casillas no pintadas
-
-        if y == 7:
-            return pintar(x+1, 0)
-        else:
-            return pintar(x, y+1)
-
-    if ((x + 1 <= 8) and (y + 1 <= 8)):
-
-        if buscar_tesela_1(x, y):
-
-            if y == 7:
-                terminado = pintar(x+1, 0)
-            else:
-                terminado = pintar(x, y+1)
-
-            if terminado:
-                return True
-
-            # si no funciono TwT
-            despintar_tesela_1(x, y)
-
-        if buscar_tesela_4(x, y):
-
-            if y == 7:
-                terminado = pintar(x+1, 0)
-            else:
-                terminado =  pintar(x, y+1)
-
-            if terminado:
-                return True
-
-            # si no :,v
-            despintar_tesela_4(x, y)
-
-    return False
-'''
-
-
 
 
 
