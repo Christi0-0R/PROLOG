@@ -118,56 +118,132 @@
 
 
 ; VOLUMENES
-(defun cubo(lado)
-    (* lado lado lado)
+(defun cubo()
+    (format t "Ingrese el lado: ")
+    (setq lado (read))
+ 
+    (setq resultado (* lado lado lado))
+ 
+    (format t "El volumen del cubo es ~A~%" resultado)
 ) ; 11
-
-(defun prismaRectangular(largo ancho altura)
-    (* largo ancho altura)
+ 
+(defun prismaRectangular()
+    (format t "Ingrese el largo: ")
+    (setq largo (read))
+    (format t "Ingrese el ancho: ")
+    (setq ancho (read))
+    (format t "Ingrese la altura: ")
+    (setq altura (read))
+ 
+    (setq resultado (* largo ancho altura))
+ 
+    (format t "El volumen del prisma rectangular es ~A~%" resultado)
 ) ; 12
-
-(defun prismaTriangular(base altura alturaPris)
+ 
+(defun prismaTriangular()
+    (format t "Ingrese la base: ")
+    (setq base (read))
+    (format t "Ingrese la altura del triangulo: ")
+    (setq altura (read))
+    (format t "Ingrese la altura del prisma: ")
+    (setq alturaPris (read))
+ 
     (setq mul (* base altura alturaPris))
-    (/ mul 2)
+    (setq resultado (/ mul 2))
+ 
+    (format t "El volumen del prisma triangular es ~A~%" resultado)
 ) ; 13
-
-(defun cilindro(radio altura)
-    (* pi radio radio altura)
+ 
+(defun cilindro()
+    (format t "Ingrese el radio: ")
+    (setq radio (read))
+    (format t "Ingrese la altura: ")
+    (setq altura (read))
+ 
+    (setq resultado (* pi radio radio altura))
+ 
+    (format t "El volumen del cilindro es ~A~%" resultado)
 ) ; 14
-
-(defun esfera(radio)
-    (setq div(/ 4 3))
-    (* div pi radio radio radio)
+ 
+(defun esfera()
+    (format t "Ingrese el radio: ")
+    (setq radio (read))
+ 
+    (setq div (/ 4 3))
+    (setq resultado (* div pi radio radio radio))
+ 
+    (format t "El volumen de la esfera es ~A~%" resultado)
 ) ; 15
-
-(defun cono(radio altura)
+ 
+(defun cono()
+    (format t "Ingrese el radio: ")
+    (setq radio (read))
+    (format t "Ingrese la altura: ")
+    (setq altura (read))
+ 
     (setq div (/ 1 3))
-    (* div pi radio radio altura)
+    (setq resultado (* div pi radio radio altura))
+ 
+    (format t "El volumen del cono es ~A~%" resultado)
 ) ; 16
-
-(defun piramideCuad(lado altura)
+ 
+(defun piramideCuad()
+    (format t "Ingrese el lado: ")
+    (setq lado (read))
+    (format t "Ingrese la altura: ")
+    (setq altura (read))
+ 
     (setq div (/ 1 3))
-    (* div lado lado altura)
+    (setq resultado (* div lado lado altura))
+ 
+    (format t "El volumen de la piramide cuadrangular es ~A~%" resultado)
 ) ; 17
-
-(defun piramideTri(base altura alturaPiramide)
+ 
+(defun piramideTri()
+    (format t "Ingrese la base: ")
+    (setq base (read))
+    (format t "Ingrese la altura del triangulo: ")
+    (setq altura (read))
+    (format t "Ingrese la altura de la piramide: ")
+    (setq alturaPiramide (read))
+ 
     (setq div (/ 1 3))
-    (setq area (triangulo base altura))
-    (* div area alturaPiramide)
+    (setq mul (* base altura))
+    (setq area (/ mul 2))
+    (setq resultado (* div area alturaPiramide))
+ 
+    (format t "El volumen de la piramide triangular es ~A~%" resultado)
 ) ; 18
-
-(defun prismaHexagonal(perimetro apotema altura)
-    (setq area (hexagono perimetro apotema))
-    (* area altura)
+ 
+(defun prismaHexagonal()
+    (format t "Ingrese el perimetro: ")
+    (setq perimetro (read))
+    (format t "Ingrese el apotema: ")
+    (setq apotema (read))
+    (format t "Ingrese la altura: ")
+    (setq altura (read))
+ 
+    (setq mul (* perimetro apotema))
+    (setq area (/ mul 2))
+    (setq resultado (* area altura))
+ 
+    (format t "El volumen del prisma hexagonal es ~A~%" resultado)
 ) ; 19
-
-
-(defun troncoCono(radioMa radioMe altura)
+ 
+(defun troncoCono()
+    (format t "Ingrese el radio mayor: ")
+    (setq radioMa (read))
+    (format t "Ingrese el radio menor: ")
+    (setq radioMe (read))
+    (format t "Ingrese la altura: ")
+    (setq altura (read))
+ 
     (setq div (/ (* pi altura) 3))
     (setq sum (+ (* radioMa radioMa) (* radioMa radioMe) (* radioMe radioMe)))
-    (* div sum)
+    (setq resultado (* div sum))
+ 
+    (format t "El volumen del tronco de cono es ~A~%" resultado)
 ) ; 20 ??????
-
 
 
 ; Menuncito sjdhsjdhs
@@ -223,7 +299,6 @@
         (18 (piramideTri))
         (19 (prismaHexagonal))
         (20 (troncoCono))
-
 
         (otherwise (format t "Opcion invalida~%"))
     )
