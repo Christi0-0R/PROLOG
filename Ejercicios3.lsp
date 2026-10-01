@@ -34,6 +34,16 @@
     (+ 30 (* libras 4))
 )
 
+; niveles :p
+(defun definir_nivel(peso)
+    (cond
+        ((< peso 8) "Bajo")
+        ((< peso 15) "Medio")
+        ((< peso 22) "Alto")
+        ( t "Maximo")
+    )
+)
+
 ; gud, se ocupa el peso de la ropa para la lavadora
 (defun lavar()
 
@@ -47,28 +57,8 @@
 
     ; calculos
     (when (<= peso 30)
-        (if (< peso 8)
-            (progn
-                (format t "Nivel de lavado: Bajo~%")
-                (format t "Cantidad de agua de ~A L ~%" agua)
-            )
-            (if (< peso 15)
-                (progn
-                    (format t "Nivel de lavado: Medio~%")
-                    (format t "Cantidad de agua de ~A L ~%" agua)
-                )
-                (if (< peso 22)
-                    (progn
-                        (format t "Nivel de lavado: Alto~%")
-                        (format t "Cantidad de agua de ~A L ~%" agua)
-                    )
-                    (progn
-                        (format t "Nivel de lavado: Maximo~%")
-                        (format t "Cantidad de agua de ~A L ~%" agua)
-                    )
-                )
-            )
-        )
+        (format t "Nivel de lavado: ~A~%" (definir_nivel peso))
+        (format t "Cantidad de agua: ~A L~%" (calculo_agua peso))
     )
 
     (when (> peso 30)
@@ -77,4 +67,4 @@
 
 )
 
-; 3. 
+; 3. Martha va a realizar su fiesta de quince años. Por lo cual ha invitado a una gran cantidad de personas. Pero tambien
