@@ -1,9 +1,9 @@
-; 1. Que calcule el sieldo que le corresponde al trabajador de una empresa que cobra 40,000 euros anuales, el programa debe realizar los calculos en funcino a de los siguente criterios:
+; 1. Que calcule el sueldo que le corresponde al trabajador de una empresa que cobra 40,000 euros anuales. El programa debe realizar los cálculos en función de los siguientes criterios:
 
-; - Si lleva mas de 10 años en la empresa se le palica un aumento del 10%
-; - Si lleva menos de 10 años pero mas que 5 se le aplica un aumento del 7%
-; - Si lleva menos de 5 años pero mas que 3 se le aplica un aumento del 5%
-; - Si lleva menos de 3 años se le aplica un aumento del 3%
+; - Si lleva más de 10 años en la empresa, se le aplica un aumento del 10%.
+; - Si lleva menos de 10 años, pero más de 5, se le aplica un aumento del 7%.
+; - Si lleva menos de 5 años, pero más de 3, se le aplica un aumento del 5%.
+; - Si lleva menos de 3 años, se le aplica un aumento del 3%.
 
 
 ; se ocupa saber los años del trabajador
@@ -23,11 +23,58 @@
     )
 
     (setq total (+ sueldo aumento))
-
     (format t "Su sueldo anual es de ~A~%" total)
 )
 
 
+; 2. Hacer un algoritmo que tome el peso en libras de una cantidad de ropa a lavar en una lavadora y nos devuelva el nivel dependiendo del peso. Además, nos informe la cantidad de litros de agua que necesitamos. Se sabe que con más de 30 libras la lavadora no funcionará, ya que es demasiado. Pero, si la ropa pesa 22 o más libras, el nivel será el máximo; si pesa 15 o más, será de alto; si pesa 8 o más, será un nivel medio o, de lo contrario, el nivel será mínimo.
 
+; para calcular agua iguess
+(defun calculo_agua(libras)
+    (+ 30 (* libras 4))
+)
 
-; 2. Hacer un algoritmo que tome el peso en libras
+; gud, se ocupa el peso de la ropa para la lavadora
+(defun lavar()
+
+    (format t "Ingrese el tamaño en libras de la ropa: ")
+    ; para que se vea nice
+    (setq peso (read))
+
+    (format t "Calculando el nivel del lavado . . . ~%")
+
+    (setq agua (calculo_agua peso))
+
+    ; calculos
+    (when (<= peso 30)
+        (if (< peso 8)
+            (progn
+                (format t "Nivel de lavado: Bajo~%")
+                (format t "Cantidad de agua de ~A L ~%" agua)
+            )
+            (if (< peso 15)
+                (progn
+                    (format t "Nivel de lavado: Medio~%")
+                    (format t "Cantidad de agua de ~A L ~%" agua)
+                )
+                (if (< peso 22)
+                    (progn
+                        (format t "Nivel de lavado: Alto~%")
+                        (format t "Cantidad de agua de ~A L ~%" agua)
+                    )
+                    (progn
+                        (format t "Nivel de lavado: Maximo~%")
+                        (format t "Cantidad de agua de ~A L ~%" agua)
+                    )
+                )
+            )
+        )
+    )
+
+    (when (> peso 30)
+        (format t "Peso excedido, el proceso no puede seguir, por favor, retire el exceso de ropa")
+    )
+
+)
+
+; 3. 
