@@ -67,4 +67,22 @@
 
 )
 
-; 3. Martha va a realizar su fiesta de quince años. Por lo cual ha invitado a una gran cantidad de personas. Pero tambien
+; 3. Martha va a realizar su fiesta de quince años, por lo cual ha invitado a una gran cantidad de personas. Pero también ha decidido algunas reglas: que todas las personas con edades mayores a los quince años solo pueden entrar si traen regalos; que jóvenes con los quince años cumplidos entran totalmente gratis, pero los de menos de quince años no pueden entrar a la fiesta. Hacer un algoritmo donde se tome la edad de una persona y qué requisito de los anteriores le toca cumplir si quiere entrar.
+
+(defun fiesta()
+
+    (format t "Para ingresar a la fiesta de quince años, se ocupa saber su edad ~%")
+    (format t "Ingrese su edad: ")
+    (setq edad (read))
+
+    (when (< edad 15)
+        (format t "No puedes entrar a la fiesta.~%")
+    )
+
+    (unless (< edad 15)
+        (if (= edad 15)
+            (format t "Puedes entrar totalmente gratis~%")
+            (format t "Puedes entrar si traes un regalo~%")
+        )
+    )
+)
