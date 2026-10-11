@@ -672,19 +672,3 @@
 
     t
 )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Do you know a quick way to stop existing? Something like taking medication, going to sleep, and not waking up the next day? I’d use a rope, but I don’t even have anywhere to hang it.
