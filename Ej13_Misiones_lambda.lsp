@@ -51,27 +51,9 @@
     (if ag
         (cond
             (setq lista (append lista (list (car (car ag)))))
-            (append lista (car (car ag)))
+            ;(append lista (car (car ag)))
             (nombre (cdr ag))
         )
         (format t "Lista de nombres: ~A" lista)
     )
 )
-
-
-
-
-
-
-
-
-
-
-(defun edad (ag)
-)
-
-(defun nivel (ag)
-)
-
-(defun base   (ag) ...)
-(defun puntos (ag) ...)
