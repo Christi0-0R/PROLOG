@@ -12,12 +12,19 @@ Constante de individuo: tierra
 Propiedades: es un planeta
 Dominio del discurso: Sistema Solar
 ```
+```
+planeta(tierra).
+```
 
 - La Luna no es un planeta.
 ```
 Constante de individuo: luna
 Propiedades: no es un planeta
 Dominio del discurso: Sistema Solar
+```
+```
+noesplaneta(luna).
+\+planeta(luna).
 ```
 
 - La Luna es un satélite.
@@ -26,13 +33,21 @@ Constante de individuo: luna
 Propiedades: es un satelite
 Dominio del discurso: Sistema Solar
 ```
+```
+satelite(luna).
+```
 
 - La Tierra gira alrededor del Sol.
 ```
 Constantes de individuos: tierra, sol
-Propiedades: gira alrededor
+Propiedades: es un platea, es una estrella
 Relacion: la tierra gira alrededor del sol
 Dominio del discurso: Sistema Solar
+```
+```
+planeta(tierra).
+estrella(sol).
+giraalrededor(tierra, sol).
 ```
 
 - Todo planeta es un satélite.
@@ -43,15 +58,26 @@ Propiedades, es un planeta, es un satelite
 Relacion: si es un planeta, es un satelite
 Dominio del discurso: Sistema Solar
 ```
+```
+planeta(X).
+satelite(X).
+∀X (planeta(X) -> satelite(X)).
+```
 
 - Todo planeta gira alrededor del Sol.
 ```
 Variable de individuo: X es un planeta
 Constante de individuo: sol
 Cuantificador: universal ∀
-Propiedades: ser un planeta, girar alrededor
+Propiedades: ser un planeta, ser una estrella
 Relacion: todos los planetas giran alrededor del sol
 Dominio del discurso: Sistema Solar
+```
+```
+planeta(X).
+estrella(sol).
+giraalrededor(X,sol).
+∀X (planeta(X) -> giraalrededor(X,sol)).
 ```
 
 - Algún planeta gira alrededor de la Luna.
@@ -63,6 +89,12 @@ Propiedades: ser un planeta, girar alrededor
 Relacion: algun planeta gira alrededor de la luna
 Dominio del discurso: Sistema Solar
 ```
+```
+planeta(X).
+satelite(luna).
+giraalrededor(X,luna).
+∃X (planeta(X) ^ giraalrededor(X,luna)).
+```
 
 - Hay por lo menos un satélite.
 ```
@@ -70,14 +102,24 @@ Variable de individuo: X es un satelite
 Cuantificador: existencial ∃
 Dominio del discurso: Sistema Solar
 ```
+```
+satelite(X).
+∃X (satelite(X)).
+```
 
 - Todos los perros del vecindario muerden a algún cartero.
 ```
 Variables de individuo: X es un perro, Y es un cartero
 Cuantificador: universal ∀, existencial ∃
-Propiedades: ser perro del vecino, ser un cartero
+Propiedades: ser un perro, ser un cartero
 Relacion: los perror mueren a un cartero
 Dominio del discurdo: Animales y personas del vecindario
+```
+```
+perro(X).
+cartero(Y).
+muerdea(X,Y).
+∀X (perro(x) -> ∃Y (cartero(Y) ^ muerdea(X,Y))).
 ```
 
 - Hay un cartero al que lo muerden todos los perros.
@@ -88,6 +130,12 @@ Propiedades: ser un cartero, ser un perro
 Relaciones: a un cartero los muerden todos los perros
 Dominio del discurso: Animales y personas del vecindario
 ```
+```
+cartero(X).
+perro(Y).
+muerdea(Y,X).
+∃X (cartero(X) ^ ∀Y (perro(Y) -> muerdea(Y,X))).
+```
 
 - Todos los carteros son mordidos por algún perro.
 ```
@@ -97,6 +145,12 @@ Propiedades: ser un cartero, ser un perro
 Relaciones: los carteros son mordidos por un perro
 Dominio del discurso: Animales y personas del vecindario
 ```
+```
+cartero(X).
+perro(Y).
+muerdea(Y,X).
+∀X (cartero(X) -> ∃Y (perro(Y) ^ muerdea(Y,X))).
+```
 
 - Hay un perro que muerde a todos los carteros.
 ```
@@ -104,7 +158,13 @@ Variables de individuo: X es un perro, Y es un cartero
 Cuantificador: universal ∀, existencial ∃
 Propiedades: ser un perro, ser un cartero
 Relaciones: un perro muerde todos los carteros
-Dominio del discurso: Animales y personas del vecindario
+Dominio del discurso: Animales y personas del vecindarioS
+```
+```
+perro(X).
+cartero(Y).
+muerdea(X,Y).
+∃X (perro(X) ^ ∀Y (cartero(Y) -> muerdea(X,Y))).
 ```
 
 - Todos los perros que asustan a algún cartero, lo muerden.
@@ -114,6 +174,13 @@ Cuantificador: universal ∀, existencial ∃
 Propiedades: ser un perro, ser un cartero
 Relaciones: los perros asustan a un cartero, los perros muerden a un cartero
 Dominio del discurso: Animales y personas del vecindario
+```
+```
+perro(X).
+cartero(Y).
+asustaa(X,Y).
+muerdea(X,Y).
+∀X ((perro(X) ^ cartero(y) ^ asustaa(X,Y)) -> muerdea(X,Y)).
 ```
 
 - Hay un perro que muerde a todos los perros que muerden a algún cartero.
