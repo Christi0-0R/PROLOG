@@ -1,49 +1,110 @@
+$ Familia
+
+madre(alicia).
+madre(yuli).
+madre(abril).
+madre(noemi).
+
+madre(tita)
+madre(nadia).
+madre(yus).
 
 % padres
 
-padre(ramiro).
-padre(julio).
-padre(pedro).
-padre(luis).
-padre(fernando).
-padre(ricardo).
-padre(antonio).
-padre(miguel).
+padre(francisco).
+padre(paco).
 
-% madres
+padre(javier).
 
-madre(maria).
-madre(julia).
-madre(guadalupe).
-madre(liz).
-madre(ana).
-madre(laura).
-madre(sofia).
-madre(carmen).
+padre(moha).
 
-% padre de
-
-padrede(ramiro, julio).
-padrede(ramiro, fernando).
-padrede(ramiro, ricardo).
-padrede(julio, pedro).
-padrede(julio, ana).
-padrede(pedro, luis).
-padrede(pedro, sofia).
-padrede(fernando, antonio).
-padrede(ricardo, miguel).
+padre(carlos).
 
 % madre de
 
-madrede(maria, julio).
-madrede(maria, fernando).
-madrede(maria, ricardo).
-madrede(julia, pedro).
-madrede(julia, ana).
-madrede(guadalupe, luis).
-madrede(guadalupe, sofia).
-madrede(liz, antonio).
-madrede(liz, miguel).
+madrede(alicia, yuli).
+madrede(alicia, abril).
+madrede(alicia, noemi).
+madrede(alicia, paco).
+
+madrede(yuli, naomi).
+madrede(yuli, alison).
+
+madrede(abril, regina).
+
+madrede(noemi, venecia).
+
+madrede(tita, nadia).
+madrede(tita, yus).
+madrede(tita, moha).
+madrede(tita, abu).
+madrede(tita, salvador).
+
+madrede(nadia, carla).
+madrede(nadia, pavel).
+
+madrede(yus, gabi).
+madrede(yus, dani).
+madrede(yus, alex).
+madrede(yus, miguel).
+
+% padre de
+
+padrede(francisco, yuli).
+padrede(francisco, abril).
+padrede(francisco, noemi).
+padrede(francisco, paco).
+
+padrede(paco, nicol).
+padrede(paco, nataly).
+
+padrede(javier, naomi).
+padrede(javier, alison).
+
+padrede(moha, regina).
+
+padrede(carlos, carla).
+padrede(carlos, pavel).
+
+
+% hermana
+
+hermana(yuli).
+hermana(abril).
+hermana(noemi).
+
+hermana(nadia).
+hermana(yus).
+
+hermana(naomi).
+hermana(alison).
+
+hermana(nicol).
+hermana(nataly)
+
+hermana(gabi).
+
+hermana(carla).
+
+% hermano
+
+
+
+
+
+
+
+
+% mascotas :3
+
+mascota(agata).
+mascota(bellota).
+mascota(morty).
+mascota(biscocho).
+mascota(cocoa).
+mascota(chuby).
+mascota(pinky).
+
 
 
 % Preguntas chidas sjdsjdh
